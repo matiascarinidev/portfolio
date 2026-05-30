@@ -29,9 +29,9 @@ function Project({ deployLink }) {
         rel="noopener noreferrer"
         className="flex px-4 max-w-[50%] border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg transition-all items-center"
       >
-        {metadata?.image?.url && (
+        {metadata?.image && (
           <img
-            src={metadata.image.url}
+            src={metadata.image}
             alt={metadata.title || "Project screenshot"}
             className="w-40 h-40 object-fit rounded-[50%] p-4"
           />
