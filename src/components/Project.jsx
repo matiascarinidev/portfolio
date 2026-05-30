@@ -4,7 +4,11 @@ function Project({ deployLink }) {
   const [metadata, setMetadata] = useState(null);
 
   useEffect(() => {
-    fetch(`https://api.microlink.io?url=${encodeURIComponent(deployLink)}`)
+    fetch(
+      `https://api.linkpreview.net/?q=${encodeURIComponent(
+        deployLink
+      )}&key=5a7e648aada55fa7578e24bc527da71c`
+    )
       .then((res) => res.json())
       .then((data) => setMetadata(data.data));
   }, [deployLink]);
