@@ -10,7 +10,7 @@ function Project({ deployLink }) {
       )}`
     )
       .then((res) => res.json())
-      .then((data) => setMetadata(data.data));
+      .then((data) => setMetadata(data));
   }, [deployLink]);
 
   if (!metadata) {
