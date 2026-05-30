@@ -4,13 +4,9 @@ function Project({ deployLink }) {
   const [metadata, setMetadata] = useState(null);
 
   useEffect(() => {
-    fetch(
-      `https://api.linkpreview.net/?key=5a7e648aada55fa7578e24bc527da71c&q=${encodeURIComponent(
-        deployLink
-      )}`
-    )
+    fetch(`https://api.microlink.io?url=${encodeURIComponent(deployLink)}`)
       .then((res) => res.json())
-      .then((data) => setMetadata(data));
+      .then((data) => setMetadata(data.data));
   }, [deployLink]);
 
   if (!metadata) {
@@ -29,9 +25,9 @@ function Project({ deployLink }) {
         rel="noopener noreferrer"
         className="flex px-4 max-w-[50%] border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg transition-all items-center"
       >
-        {metadata?.image && (
+        {metadata?.image?.url && (
           <img
-            src={metadata.image}
+            src={metadata.image.url}
             alt={metadata.title || "Project screenshot"}
             className="w-40 h-40 object-fit rounded-[50%] p-4"
           />
