@@ -5,9 +5,9 @@ function Project({ deployLink }) {
 
   useEffect(() => {
     fetch(
-      `https://api.linkpreview.net/?q=${encodeURIComponent(
+      `https://api.linkpreview.net/?key=5a7e648aada55fa7578e24bc527da71c&q=${encodeURIComponent(
         deployLink
-      )}&key=5a7e648aada55fa7578e24bc527da71c`
+      )}`
     )
       .then((res) => res.json())
       .then((data) => setMetadata(data.data));
