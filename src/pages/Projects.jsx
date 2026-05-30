@@ -13,8 +13,6 @@ function Projects() {
         <Project deployLink="https://lentejuelas-core.vercel.app/" />
         <Project deployLink="https://lentejuelas-ventas.vercel.app/" />
         <Project deployLink="https://restaurant-lilac-five.vercel.app/" />
-        <Project deployLink="https://github.com/maticarini" />
-        <Project deployLink="https://github.com/matiascarini" />
         <Project deployLink="https://github.com/Matiascarinidev" />
       </ul>
       <p className="mt-6 px-6">
