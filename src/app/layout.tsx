@@ -29,7 +29,7 @@ export default function RootLayout({
           <div className="flex-1 flex items-start md:items-center justify-center px-4 py-8 md:py-12">
             <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12 items-start">
               <main className="flex-1 w-full">{children}</main>
-              <aside className="sticky top-8">
+              <aside className="sticky top-8 md:flex-0 sm:flex-0">
                 <SideMenu />
               </aside>
             </div>
