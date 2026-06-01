@@ -14,7 +14,7 @@ export const projects: Project[] = [
     title: "Lentejuelas Core",
     deployUrl: "https://lentejuelas-core.vercel.app/",
     repoUrl: "https://github.com/maticarini/lentejuelas-core",
-    techStack: ["Next.js", "PostgreSQL", "Prisma"],
+    techStack: ["React", "Next.js", "PostgreSQL", "Prisma"],
     goal: "Sistema de gestión empresarial",
   },
   {
@@ -22,7 +22,7 @@ export const projects: Project[] = [
     title: "Lentejuelas Ventas",
     deployUrl: "https://lentejuelas-ventas.vercel.app/",
     repoUrl: "https://github.com/maticarini/lentejuelas-ventas",
-    techStack: ["React", "Node.js", "MongoDB"],
+    techStack: ["React", "Node.js", "PostgreSQL", "Prisma"],
     goal: "POS con manejo de mesas y pedidos",
   },
   {
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     title: "Restaurant App",
     deployUrl: "https://restaurant-lilac-five.vercel.app/",
     repoUrl: "https://github.com/maticarini/restaurant-app",
-    techStack: ["Next.js", "Tailwind", "Stripe"],
-    goal: "Aplicación de reservas y menú digital",
+    techStack: ["Next.js", "Tailwind"],
+    goal: "Aplicación de reservas y menú digital (Incompleto)",
   },
 ];
