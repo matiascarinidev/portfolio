@@ -14,7 +14,7 @@ export default function SideMenu() {
   const pathname = usePathname();
 
   return (
-    <nav>
+    <nav className="text-contrast">
       <ul className="flex flex-row md:flex-col gap-5 md:gap-3 justify-center md:justify-start">
         {navItems.map(({ href, label }) => (
           <li key={href}>

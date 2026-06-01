@@ -26,12 +26,12 @@ export default function RootLayout({
     <html lang="es" className={montserrat.variable}>
       <body className="font-montserrat bg-black text-white">
         <div className="min-h-screen flex flex-col relative">
-          <div className="flex-1 flex items-start md:items-center justify-center px-4 py-8 md:py-12">
-            <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-              <main className="flex-1 w-full">{children}</main>
-              <aside className="sticky top-8 md:flex-0 sm:flex-0">
+          <div className="flex-1 flex flex-col md:flex-row md:items-center justify-center px-4 py-8 md:py-12">
+            <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12">
+              <aside className="order-1 md:order-1 md:sticky md:top-8">
                 <SideMenu />
               </aside>
+              <main className="flex-1 order-2 md:order-2">{children}</main>
             </div>
           </div>
           <Footer />
