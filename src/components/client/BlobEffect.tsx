@@ -11,9 +11,9 @@ interface Blob {
 
 export default function BlobEffect() {
   const [blobs] = useState<Blob[]>([
-    { id: 1, radius: 150, speed: 0.5, angle: 0 },
-    { id: 2, radius: 125, speed: 0.7, angle: Math.PI / 2 },
-    { id: 3, radius: 100, speed: 1.2, angle: Math.PI / 4 },
+    { id: 1, radius: 75, speed: 0.5, angle: -8 },
+    { id: 2, radius: 60, speed: -0.7, angle: Math.PI / 2 },
+    { id: 3, radius: 100, speed: 1.2, angle: Math.PI / -4 },
   ]);
 
   return (
@@ -24,18 +24,14 @@ export default function BlobEffect() {
       <svg className="absolute w-0 h-0">
         <defs>
           <filter id="goo">
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation="10"
-              result="blur"
-            />
+            <feGaussianBlur in="desaturated" stdDeviation="10" result="blur" />
             <feColorMatrix
               in="blur"
               mode="matrix"
               values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
               result="goo"
             />
-            <feBlend in="SourceGraphic" in2="goo" />
+            <feBlend in="desaturated" in2="goo" />
           </filter>
         </defs>
       </svg>
@@ -66,7 +62,7 @@ function MovingBlob({
       time += speed * 0.01;
       setPosition({
         x: Math.cos(angle + time) * 30,
-        y: Math.sin(angle + time) * 60,
+        y: Math.sin(angle + time) * 60 + 90,
       });
       animationRef.current = requestAnimationFrame(animate);
     };
@@ -82,7 +78,7 @@ function MovingBlob({
 
   return (
     <div
-      className="absolute rounded-full bg-white"
+      className="absolute rounded-full bg-white/50"
       style={{
         width: `${radius}px`,
         height: `${radius}px`,

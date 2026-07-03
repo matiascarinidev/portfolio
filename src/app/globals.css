@@ -4,6 +4,7 @@
   --accent: #00d4ff;
   --accent-dark: #0099cc;
   --accent-glow: rgba(0, 212, 255, 0.2);
+  box-sizing: border-box;
 }
 
 body {
@@ -38,4 +39,7 @@ body {
 .text-contrast {
   mix-blend-mode: difference;
   color: white;
+}
+p {
+  white-space: pre-line;
 }

@@ -16,7 +16,8 @@ export default function Button({
     "inline-block px-6 py-2 text-sm md:text-base font-medium rounded-md transition-all duration-200";
 
   const variants = {
-    primary: "bg-white text-black hover:bg-white/90",
+    primary:
+      "bg-white text-black hover:bg-black hover:text-white hover:border hover:border-white",
     secondary: "border border-white/30 text-white hover:bg-white/10",
   };
 

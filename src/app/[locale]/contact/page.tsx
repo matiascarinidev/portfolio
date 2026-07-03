@@ -1,24 +1,14 @@
+"use client";
 import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
-
+import SectionTitle from "@/components/shared/SectionTitle";
+import { useLocale } from "@/context/LocaleContext";
 export default function ContactPage() {
+  const { locale, messages } = useLocale();
   return (
     <div className="text-contrast">
-      <h1 className="text-3xl md:text-4xl font-light">MATIAS CARINI</h1>
-      <p className="text-xl md:text-2xl font-extralight mt-2">
-        Full Stack Developer
-      </p>
-
-      <div className="mt-8 space-y-2">
-        <p className="text-base md:text-lg">
-          Estoy esperando saber de tu proyecto.
-        </p>
-        <p className="text-base md:text-lg">
-          Hablemos sobre cómo podemos construir un sitio web que funcione para
-          tu negocio.
-        </p>
-      </div>
-
+      <SectionTitle description={messages.contact.description} />
       <address className="not-italic mt-8">
         <ul className="flex flex-col gap-5 text-base md:text-lg">
           <li className="flex items-center gap-3">
@@ -43,7 +33,18 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="hover:text-accent transition-colors"
             >
-              linkedin.com/in/matias-carini
+              /in/matias-carini
+            </a>
+          </li>
+          <li className="flex items-center gap-3">
+            <FaGithub className="text-2xl md:text-3xl shrink-0 text-accent" />
+            <a
+              href="https://github.com/matiascarinidev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              /matiascarinidev
             </a>
           </li>
         </ul>
