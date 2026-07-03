@@ -1,9 +1,9 @@
 "use client";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { useLocale } from "@/context/LocaleContext";
+import Link from "next/link";
 export default function ContactPage() {
   const { locale, messages } = useLocale();
   return (
@@ -11,41 +11,43 @@ export default function ContactPage() {
       <SectionTitle description={messages.contact.description} />
       <address className="not-italic mt-8">
         <ul className="flex flex-col gap-5 text-base md:text-lg">
-          <li className="flex items-center gap-3">
-            <IoIosMail className="text-2xl md:text-3xl shrink-0 text-accent" />
+          <li>
             <div className="flex flex-wrap items-center gap-2">
-              <code className="select-all bg-gray-800/50 px-2 py-1 rounded text-sm font-mono">
-                matiascarinidev@gmail.com
-              </code>
-              <a
+              <div className="flex items-center gap-3 text-accent transition-colors duration-300">
+                <IoIosMail className="text-2xl md:text-3xl text-accent transition-colors duration-300" />
+                <code className="select-all bg-gray-800/50 px-2 py-1 rounded text-sm font-mono">
+                  matiascarinidev@gmail.com
+                </code>
+              </div>
+              <Link
                 href="mailto:matiascarinidev@gmail.com"
-                className="text-accent text-sm hover:text-accent-dark transition-colors"
+                className="p-2 rounded text-accent text-sm hover:text-accent hover:font-semibold hover:border hover:border-accent transition-all duration-300"
               >
-                Enviar mail →
-              </a>
+                {messages.contact.send} →
+              </Link>
             </div>
           </li>
-          <li className="flex items-center gap-3">
-            <FaLinkedin className="text-2xl md:text-3xl shrink-0 text-accent" />
-            <a
-              href="https://www.linkedin.com/in/matias-carini/"
+          <li className="flex items-center gap-3 text-accent transition-colors duration-300">
+            <FaLinkedin className="text-2xl md:text-3xl  text-accent" />
+            <Link
+              href={messages.contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-accent transition-colors"
             >
               /in/matias-carini
-            </a>
+            </Link>
           </li>
-          <li className="flex items-center gap-3">
-            <FaGithub className="text-2xl md:text-3xl shrink-0 text-accent" />
-            <a
-              href="https://github.com/matiascarinidev"
+          <li className="flex items-center gap-3 text-accent transition-colors duration-300">
+            <FaGithub className="text-2xl md:text-3xl text-accent" />
+            <Link
+              href={messages.contact.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-accent transition-colors"
+              className=" transition-colors "
             >
               /matiascarinidev
-            </a>
+            </Link>
           </li>
         </ul>
       </address>

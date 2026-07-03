@@ -43,3 +43,6 @@ body {
 p {
   white-space: pre-line;
 }
+.text-accent:hover {
+  color: var(--accent-dark);
+}

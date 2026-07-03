@@ -41,6 +41,10 @@ export interface ProjectsMessages {
 export interface ContactMessages {
   description: string;
   cta: string;
+  send: string;
+  email: string;
+  linkedin: string;
+  github: string;
 }
 export interface HomeMessages {
   description: string;

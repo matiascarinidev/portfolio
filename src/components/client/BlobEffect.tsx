@@ -24,7 +24,7 @@ export default function BlobEffect() {
       <svg className="absolute w-0 h-0">
         <defs>
           <filter id="goo">
-            <feGaussianBlur in="desaturated" stdDeviation="10" result="blur" />
+            <feGaussianBlur in="desaturated" stdDeviation="8" result="blur" />
             <feColorMatrix
               in="blur"
               mode="matrix"

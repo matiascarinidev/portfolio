@@ -147,7 +147,7 @@ export default function ProjectsPage() {
           </div>
         )}
 
-        <div className="mt-6 flex-shrink-0  flex justify-end">
+        <div className="mt-6 flex justify-end">
           <Button href={`/${locale}/contact`}>{messages.contact.cta}</Button>
         </div>
       </div>

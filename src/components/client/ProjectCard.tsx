@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { Project, ProjectMetadata } from "@/lib/types";
+import Link from "next/link";
 import { useLocale } from "@/context/LocaleContext";
-
 interface ProjectCardProps {
   project: Project;
 }
@@ -24,8 +24,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   if (isLoading) {
     return (
-      <div className="bg-gray-900/60 border border-gray-800 rounded-xl animate-pulse h-full flex flex-col md:flex-row">
-        <div className="w-full md:w-2/5 h-48 md:h-full bg-gray-800 rounded-t-xl md:rounded-l-xl md:rounded-t-none flex-shrink-0" />
+      <div className="bg-gray-900/40 border border-gray-800 rounded-xl animate-pulse h-full flex flex-col md:flex-row">
+        <div className="w-full md:w-2/5 h-48 md:h-full bg-gray-800 rounded-t-xl md:rounded-l-xl md:rounded-t-none" />
         <div className="flex-1 p-4 space-y-3">
           <div className="h-6 bg-gray-800 rounded w-3/4" />
           <div className="h-4 bg-gray-800 rounded w-full" />
@@ -45,9 +45,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 hover:bg-gray-900/90 transition-all duration-300 h-full flex flex-col md:flex-row">
       {/* Contenedor de imagen SIEMPRE presente, con o sin imagen */}
-      <div className="w-full md:w-2/5 md:h-full shrink-0 overflow-hidden bg-gray-800 m-auto">
+      <div className="w-full md:w-2/5 h-48 md:h-full overflow-hidden bg-gray-800 m-auto">
         {metadata?.image?.url ? (
-          <a
+          <Link
             href={project.deployUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -56,9 +56,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <img
               src={metadata.image.url}
               alt={metadata.title || project.title}
-              className="w-full h-full hover:scale-105 transition-transform duration-500"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
-          </a>
+          </Link>
         ) : (
           <div className="w-full h-full flex items-center justify-center">
             <span className="text-gray-600 text-sm">No preview</span>
@@ -72,7 +72,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {metadata?.title || project.title}
         </h3>
 
-        <p className="text-gray-400 text-xs mb-3 line-clamp-2 flex-shrink-0">
+        <p className="text-gray-400 text-xs mb-3 line-clamp-2 shrink-0">
           {metadata?.description || "Sin descripción disponible"}
         </p>
 
@@ -105,7 +105,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
 
-        <div className="shrink-0 pt-3 mt-auto">
+        <div className=" pt-3 mt-auto">
           <div className="mb-2">
             <p className="text-blue-400 text-sm font-semibold mb-1">Stack</p>
             <div className="flex flex-wrap gap-1">
@@ -121,22 +121,22 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           <div className="flex gap-4 pt-2 border-t border-gray-800">
-            <a
-              href={project.deployUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 text-sm hover:text-[#0099cc] transition-colors font-medium"
-            >
-              Live Demo →
-            </a>
-            <a
+            <Link
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 text-sm hover:text-gray-300 transition-colors"
+              className="text-gray-400 text-md hover:text-gray-300 transition-colors"
             >
               Source Code
-            </a>
+            </Link>
+            <Link
+              href={project.deployUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 text-md hover:text-[#0099cc] transition-colors font-medium"
+            >
+              Live Demo →
+            </Link>
           </div>
         </div>
       </div>

@@ -69,4 +69,5 @@ export const projectsList: Project[] = [
     result:
       "Sales operations became centralized, reducing manual work and improving daily service.",
   },
+ 
 ];
