@@ -56,7 +56,7 @@ export async function generateMetadata({
 
       images: [
         {
-          url: "/public/og-image.png",
+          url: "/og-image.png",
 
           width: 1200,
 
@@ -74,7 +74,7 @@ export async function generateMetadata({
 
       description: messages.metadata.description,
 
-      images: ["/public/og-image.png"],
+      images: ["/og-image.png"],
     },
 
     alternates: {
