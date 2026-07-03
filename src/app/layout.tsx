@@ -10,9 +10,66 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Matias Carini - Full Stack Developer",
-  description: "Portafolio de Matias Carini, desarrollador full stack",
-  icons: { icon: "/favicon.ico" },
+metadataBase: new URL("https://porfolio-wine-delta.vercel.app"),
+
+  title: "Matías Carini | Full Stack Developer",
+
+  description:
+    "Desarrollador Full Stack especializado en crear software para pequeñas empresas mediante Next.js, TypeScript y PostgreSQL.",
+
+  keywords: [
+    "Full Stack Developer",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Portfolio",
+    "Software Engineer",
+    "Argentina",
+  ],
+
+  authors: [{ name: "Matías Carini" }],
+
+  creator: "Matías Carini",
+
+  openGraph: {
+    title: "Matías Carini | Full Stack Developer",
+
+    description:
+      "Portfolio profesional con proyectos reales de desarrollo web, ERP y sistemas de gestión empresarial.",
+
+    url: "https://porfolio-wine-delta.vercel.app",
+
+    siteName: "Matías Carini Portfolio",
+
+    locale: "es_AR",
+
+    type: "website",
+
+    images: [
+      {
+        url: "/src/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Portfolio de Matías Carini",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title: "Matías Carini | Full Stack Developer",
+
+    description:
+      "Portfolio profesional de desarrollo Full Stack.",
+
+    images: ["/og-image.png"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
