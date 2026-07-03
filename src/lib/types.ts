@@ -49,6 +49,14 @@ export interface ContactMessages {
 export interface HomeMessages {
   description: string;
 }
+export interface MetadataMessages {
+  title: string;
+  description: string;
+  keywords: string[];
+  siteName: string;
+  locale: string;
+  imageAlt: string;
+}
 export interface Messages {
   common: CommonMessages;
   home: HomeMessages;
@@ -56,4 +64,5 @@ export interface Messages {
   projects: ProjectsMessages;
   projectsList: Project[];
   contact: ContactMessages;
+  metadata: MetadataMessages;
 }
