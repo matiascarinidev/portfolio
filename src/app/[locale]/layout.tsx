@@ -25,7 +25,7 @@ export async function generateMetadata({
   const messages = getMessages(locale);
 
   return {
-    metadataBase: new URL("https://porfolio-wine-delta.vercel.app"),
+    metadataBase: new URL("https://matiascarinidev.vercel.app"),
 
     title: messages.metadata.title,
 
@@ -50,13 +50,13 @@ export async function generateMetadata({
 
       locale: messages.metadata.locale,
 
-      url: `https://porfolio-wine-delta.vercel.app/${locale}`,
+      url: `https://matiascarinidev.vercel.app/${locale}`,
 
       type: "website",
 
       images: [
         {
-          url: "/og-image.png",
+          url: "https://matiascarinidev.vercel.app/og-image.png",
 
           width: 1200,
 
@@ -74,16 +74,16 @@ export async function generateMetadata({
 
       description: messages.metadata.description,
 
-      images: ["/og-image.png"],
+      images: ["https://matiascarinidev.vercel.app/og-image.png"],
     },
 
     alternates: {
-      canonical: `https://porfolio-wine-delta.vercel.app/${locale}`,
+      canonical: `https://matiascarinidev.vercel.app/${locale}`,
 
       languages: {
-        es: "https://porfolio-wine-delta.vercel.app/es",
+        es: "https://matiascarinidev.vercel.app/es",
 
-        en: "https://porfolio-wine-delta.vercel.app/en",
+        en: "https://matiascarinidev.vercel.app/en",
       },
     },
   };
